@@ -1,0 +1,171 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    padding: 60px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 30px;
+    background-image: url("/resources/images/header.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+    height: 200px;
+  }
+  #calculated-budget{
+      text-align: center;
+      color: #BEBEBE	;
+      font-size: 70px;
+  }
+
+  .income{
+    display: block;
+    background: #25b1ac;
+    color: #505050;
+    max-width: 250px;
+    height: 30px;
+    max-height: 150px;
+    min-width: 150px;
+    margin: auto;
+    font-size: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+    #income-text{
+        display: inline;
+        float: left;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    #income-value{
+        display: inline;
+        float: right;
+        margin-right: 30px;
+        margin-top: 5px;
+        color: 	#E0E0E0;
+    }
+
+  .expenses{
+      display: block;
+      background: #ff3c38;
+      color: #505050;
+      max-width: 250px;
+      height: 30px;
+      max-height: 150px;
+      min-width: 150px;
+      margin: auto;
+      margin-top:10px;
+      font-size: 15px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+    #expenses-text{
+        display: inline;
+        float: left;
+        margin-left: 10px;
+        margin-top: 5px;
+        
+    }
+    #expenses-value{
+        display: inline;
+        float: right;
+        margin-right: 30px;
+        margin-top: 5px;
+        color: 	#E0E0E0;
+    }
+
+
+.add-section{
+    flex: 15%;
+    background-color: #E8E8E8;
+    min-height: 70px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+
+}
+
+/* Select div */
+  .selectdiv {
+    /*Don't really need this just for demo styling*/
+    min-width: 30px;
+    margin-left: 40px;
+    margin-top: 5px;
+  
+  }
+  
+  /*To remove button from IE11, thank you Matt */
+  select::-ms-expand {
+       display: none;
+  }
+  
+  .selectdiv:after {
+    content: '<>';
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    /*Adjust for position however you want*/
+    
+    top: 18px;
+    padding: 0 0 2px;
+    /*left line */
+    
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+    
+    display: inline;
+    max-width: 60px;
+    height: 50px;
+    padding: 0px 24px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #333;
+    background-image: none;
+    -ms-word-break: normal;
+    word-break: normal;
+  }
+  /* End of select div */
+
+  #description{
+    min-width: 250px;
+    min-height: 30px;
+    margin-left: 40px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  #value{
+    max-width: 70px;
+    min-height: 30px;
+    margin-left: 40px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#addButton{
+    max-width: 1500px;
+    min-height: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #25b1ac;
+    border: black;
+}
+
+
+@media (max-height: 1000px) {
+    .header, .add-section {
+      flex: 100%;
+    }
+  }
