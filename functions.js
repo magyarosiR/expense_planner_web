@@ -29,3 +29,31 @@ function func() {
     alert("Click");
 
 }
+
+let contents = [];
+// example {id:1592304983049, title: 'Deadpool', year: 2015}
+const addContent = (ev) => {
+    ev.preventDefault();  //to stop the form submitting
+    let content = {
+        id: Date.now(),
+        description: document.getElementById('description').value,
+        price: document.getElementById('value').value
+    }
+    contents.push(content);
+    document.getElementById('inputs').reset(); // to clear the form for the next entries
+    //document.querySelector('form').reset();
+    let description = content.description;
+    let price = content.price;
+    //for display purposes only
+    console.warn('added', { contents });
+    let pre = document.querySelector('#descText');
+    let pre2 = document.querySelector('#priceText');
+    pre.textContent = JSON.stringify(description, '\t', 2);
+    pre2.textContent = JSON.stringify(price, '\t', 2);
+
+    //saving to localStorage
+    localStorage.setItem('MyContentList', JSON.stringify(contents));
+}
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('addButton').addEventListener('click', addContent);
+});

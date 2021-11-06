@@ -39,13 +39,15 @@
         <div class="selectdiv">
             <label>
                 <select>
-                    <option selected> + </option>
-                    <option> -</option>
+                    <option selected value="+"> + </option>
+                    <option value="-"> -</option>
                 </select>
             </label>
-            <input type="text" id="description" placeholder="Add description...">
-            <input type="text" id="value" placeholder="Value">
-            <input type="button" id="addButton" onClick="func()" value="Add to section">
+            <form id="inputs">
+                <input type="text" id="description" placeholder="Add description...">
+                <input type="text" id="value" placeholder="Value">
+            </form>
+            <input type="button" id="addButton" value="Add to section">
 
         </div>
 
@@ -53,6 +55,21 @@
     </div>
     <div class="content">
         <h6>Content section</h6>
+        <form>
+
+            <div id="msg">
+                <pre></pre>
+            </div>
+            <div id="row">
+                <div class="card">
+                    <h3 id="descText">Card 1</h3>
+                    <p id="priceText">Some text</p>
+                </div>
+            </div>
+
+
+        </form>
+
     </div>
 
     <div class="footer">3</div>
