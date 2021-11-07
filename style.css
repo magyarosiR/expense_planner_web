@@ -3,6 +3,7 @@
     flex-direction: column;
 }
 .header {
+  flex: 35%;
     padding: 60px;
     text-align: center;
     color: whitesmoke;
@@ -28,7 +29,7 @@
     max-width: 250px;
     height: 30px;
     max-height: 150px;
-    min-width: 150px;
+    min-width: 100px;
     margin: auto;
     font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -168,27 +169,34 @@
 /********************************* CONTENT *********************************/
 
 .content{
+    flex:50%;
     background-color: white;
     min-height: 200px;
     margin-top: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 #inputs{
   display: inline;
 }
 
+#descText{
+  display: inline-block;
+  font-size:large;
+  color: #484848;
+}
+
+#priceText{
+  display: inline-block;
+  float: right;
+}
 /* Cards */
 /* Float four columns side by side */
 
 
 /* Remove extra left and right margins, due to padding */
-#row {
-  margin: 0 -5px;
-  width: 25%;
-  padding: 0 10px;
-  margin-top: 10px;
-}
+
 
 /* Clear floats after the columns */
 #row:after {
@@ -207,15 +215,23 @@
 }
 
 /* Style the counter cards */
-.card {
+.cardforincome {
+  display: block;
+  margin: 0 -5px;
+  width: 20%;
+  margin-top: 10px;
+  margin-left: 25%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
+  padding: 5px;
+  text-align: left;
   background-color: #f1f1f1;
 }
-
+#incomeh2{
+  color:#25b1ac;
+  margin-left: 25%;
+}
 @media (max-height: 1000px) {
-    .header, .add-section {
+    .header, .add-section .content {
       flex: 100%;
     }
   }
