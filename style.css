@@ -216,8 +216,7 @@
 
 /* Style the counter cards */
 .cardforincome {
-  display: block;
-  margin: 0 -5px;
+  display: inline-block;
   width: 20%;
   margin-top: 10px;
   margin-left: 25%;
@@ -226,9 +225,29 @@
   text-align: left;
   background-color: #f1f1f1;
 }
+
+.cardforexpenses {
+  display: inline-block;
+  width: 20%;
+  margin-top: 10px;
+  margin-left: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: left;
+  background-color: #f1f1f1;
+}
+
+
 #incomeh2{
+  display: inline;
   color:#25b1ac;
   margin-left: 25%;
+}
+
+#expensesh2{
+  color:#ff3c38;
+  margin-left: 35%;
+  display: inline;
 }
 @media (max-height: 1000px) {
     .header, .add-section .content {

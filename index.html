@@ -24,12 +24,12 @@
             <div class="income">
                 <div id="income-text"> Income</div>
 
-                <div id="income-value" value="36000"> 36000</div>
+                <div id="income-value" value="0"> </div>
             </div>
             <div class="expenses">
                 <div id="expenses-text"> Expenses</div>
 
-                <div id="expenses-value" value="322"> 322</div>
+                <div id="expenses-value" value="0"> </div>
             </div>
             <br>
 
@@ -38,7 +38,7 @@
     <div class="add-section">
         <div class="selectdiv">
             <label>
-                <select>
+                <select id="select">
                     <option selected value="+"> + </option>
                     <option value="-"> -</option>
                 </select>
@@ -46,8 +46,9 @@
             <form id="inputs">
                 <input type="text" id="description" placeholder="Add description...">
                 <input type="text" id="value" placeholder="Value">
+                <input type="button" id="addButton" onclick="addContent()" value="Add to section">
+
             </form>
-            <input type="button" id="addButton" onclick="addContent()" value="Add to section">
 
         </div>
 
@@ -55,7 +56,8 @@
     </div>
     <div class="content">
         <h6>Content section</h6>
-        <h2 id="incomeh2">Income</h3>
+        <h2 id="incomeh2">Income</h2>
+        <h2 id="expensesh2">Expenses</h2>
 
 
     </div>
