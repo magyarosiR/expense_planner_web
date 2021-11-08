@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Impact;
 }
 /*html { 
   font-size: 62.5%;
@@ -159,7 +160,7 @@ select::-ms-expand {
   min-width: 20%;
 }
 
-#value {
+#inputValue {
   padding: 10px;
   display: inline-block;
   height: 27px;
@@ -202,10 +203,17 @@ select::-ms-expand {
   color: #484848;
 }
 
-#priceText {
+#priceTextI {
   display: inline-block;
   float: right;
+  color: #25b1ac;
 }
+#priceTextE {
+  display: inline-block;
+  float: right;
+  color: #ff3c38;
+}
+
 /* Cards */
 /* Float four columns side by side */
 
@@ -271,3 +279,5 @@ select::-ms-expand {
   margin-top: 5%;
   border-bottom-style: solid;
 }
+
+/******************* FOOTER*******************/

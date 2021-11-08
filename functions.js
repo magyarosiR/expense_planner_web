@@ -44,11 +44,11 @@ function calculateBudet() {
   }
 }
 
-function addCard(whichDiv, cardName) {
+function addCard(whichDiv, cardName, pIdType) {
   let content = {
     id: Date.now(),
     description: document.getElementById("description").value,
-    price: document.getElementById("value").value,
+    price: document.getElementById("inputValue").value,
   };
 
   contents.push(content);
@@ -64,12 +64,11 @@ function addCard(whichDiv, cardName) {
   var p = document.createElement("p"); //create the paragraph tag
 
   h3.id += "descText"; // give it a class by adding to the list
-  p.id += "priceText";
+  p.id += pIdType;
 
   for (let i = 0; i < contents.length; i++) {
     h3.innerHTML = contents[i].description;
     p.innerHTML = contents[i].price;
-    console.log(i);
   }
   div.appendChild(h3);
   div.appendChild(p);
@@ -83,12 +82,33 @@ function addCard(whichDiv, cardName) {
 }
 
 let contents = [];
+let sumOfCalculatedBudget = 0;
+let incomeSum = 0;
+let expensesSum = 0;
 function addContent() {
   let selectValue = document.getElementById("select").value;
   if (selectValue === "+") {
-    addCard("incomediv", "cardforincome");
+    let price = document.getElementById("inputValue").value;
+    sumOfCalculatedBudget += parseInt(price);
+    incomeSum += parseInt(price);
+    document.getElementById("calculated-budget").innerHTML =
+      sumOfCalculatedBudget;
+    document.getElementById("income-value").innerHTML = incomeSum;
+    document
+      .getElementById("calculated-budget")
+      .setAttribute("value", sumOfCalculatedBudget);
+    addCard("incomediv", "cardforincome", "priceTextI");
   } else {
-    addCard("expensesdiv", "cardforexpenses");
+    let price = document.getElementById("inputValue").value;
+    sumOfCalculatedBudget -= parseInt(price);
+    expensesSum -= parseInt(price);
+    document.getElementById("calculated-budget").innerHTML =
+      sumOfCalculatedBudget;
+    document.getElementById("expenses-value").innerHTML = expensesSum;
+    document
+      .getElementById("calculated-budget")
+      .setAttribute("value", sumOfCalculatedBudget);
+    addCard("expensesdiv", "cardforexpenses", "priceTextE");
   }
 }
 
