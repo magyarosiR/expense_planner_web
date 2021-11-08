@@ -1,70 +1,61 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <link rel="stylesheet" href="style.css" />
     <script src="functions.js" type="text/javascript"></script>
 
-    <title>
-        Expense Planner 2k21
-    </title>
+    <title>Expense Planner 2k21</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="flex-container">
-        <div class="header">
-            Avaible Budget in <p style="display:inline" id="time_span">
-            </p>
-
-            <div id="calculated-budget">3.0000
-
-            </div>
-            <br>
-            <div class="income">
-                <div id="income-text"> Income</div>
-
-                <div id="income-value" value="0"> </div>
-            </div>
-            <div class="expenses">
-                <div id="expenses-text"> Expenses</div>
-
-                <div id="expenses-value" value="0"> </div>
-            </div>
-            <br>
-
+      <div class="header">
+        <div class="headerspans">
+          <span style="display: inline-block">Avaible Budget in </span>
+          <span style="display: inline-block" id="time_span"></span>
         </div>
+        <div id="calculated-budget">3.0000</div>
+        <br />
+        <div class="income">
+          <div id="income-text">Income</div>
+
+          <div id="income-value" value="0"></div>
+        </div>
+        <div class="expenses">
+          <div id="expenses-text">Expenses</div>
+
+          <div id="expenses-value" value="0"></div>
+        </div>
+        <br />
+      </div>
     </div>
     <div class="add-section">
-        <div class="selectdiv">
-            <label>
-                <select id="select">
-                    <option selected value="+"> + </option>
-                    <option value="-"> -</option>
-                </select>
-            </label>
-            <form id="inputs">
-                <input type="text" id="description" placeholder="Add description...">
-                <input type="text" id="value" placeholder="Value">
-                <input type="button" id="addButton" onclick="addContent()" value="Add to section">
-
-            </form>
-
-        </div>
-
-
+      <form id="inputs">
+        <label>
+          <select id="select">
+            <option selected value="+">+</option>
+            <option value="-">-</option>
+          </select>
+        </label>
+        <input type="text" id="description" placeholder="Add description..." />
+        <input type="text" id="value" placeholder="Value" />
+        <input
+          type="button"
+          id="addButton"
+          onclick="addContent()"
+          value="Add to section"
+        />
+      </form>
     </div>
     <div class="content">
-        <h6>Content section</h6>
+      <div class="incomediv">
         <h2 id="incomeh2">Income</h2>
+      </div>
+      <div class="expensesdiv">
         <h2 id="expensesh2">Expenses</h2>
-
-
+      </div>
     </div>
 
     <div class="footer"></div>
-    </div>
-
-</body>
-
+  </body>
 </html>

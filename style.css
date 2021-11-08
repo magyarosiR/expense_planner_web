@@ -1,202 +1,215 @@
-.flex-container{
-    display: flex;
-    flex-direction: column;
+* {
+  margin: 0;
+  padding: 0;
+}
+/*html { 
+  font-size: 62.5%;
+}*/
+.flex-container {
+  display: flex;
+  flex-direction: column;
 }
 .header {
-  flex: 35%;
-    padding: 60px;
-    text-align: center;
-    color: whitesmoke;
-    font-size: 30px;
-    background-image: url("/resources/images/header.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover;
-    position: relative;
-    height: 200px;
-  }
-  #calculated-budget{
-      text-align: center;
-      color: #BEBEBE	;
-      font-size: 70px;
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 30px; /* szazalekos noveles */
+  background-image: url("/resources/images/header.jpg");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200px;
+}
+.headerspans {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+#calculated-budget {
+  text-align: center;
+  color: #bebebe;
+  font-size: 70px;
+}
 
-  .income{
-    display: block;
-    background: #25b1ac;
-    color: #505050;
-    max-width: 250px;
-    height: 30px;
-    max-height: 150px;
-    min-width: 100px;
-    margin: auto;
-    font-size: 15px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-    #income-text{
-        display: inline;
-        float: left;
-        margin-left: 10px;
-        margin-top: 5px;
-    }
-    #income-value{
-        display: inline;
-        float: right;
-        margin-right: 30px;
-        margin-top: 5px;
-        color: 	#E0E0E0;
-    }
+.income {
+  display: block;
+  margin: auto;
+  background: #25b1ac;
+  color: #505050;
+  max-width: 250px;
+  height: 30px;
+  max-height: 150px;
+  min-width: 100px;
+  width: 100%;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+}
+#income-text {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+#income-value {
+  display: inline;
+  float: right;
+  margin-right: 30px;
+  margin-top: 5px;
+  color: #e0e0e0;
+}
 
-  .expenses{
-      display: block;
-      background: #ff3c38;
-      color: #505050;
-      max-width: 250px;
-      height: 30px;
-      max-height: 150px;
-      min-width: 150px;
-      margin: auto;
-      margin-top:10px;
-      font-size: 15px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-    #expenses-text{
-        display: inline;
-        float: left;
-        margin-left: 10px;
-        margin-top: 5px;
-        
-    }
-    #expenses-value{
-        display: inline;
-        float: right;
-        margin-right: 30px;
-        margin-top: 5px;
-        color: 	#E0E0E0;
-    }
+.expenses {
+  display: block;
+  background: #ff3c38;
+  color: #505050;
+  max-width: 250px;
+  height: 30px;
+  max-height: 150px;
+  min-width: 150px;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+}
+#expenses-text {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+#expenses-value {
+  display: inline;
+  float: right;
+  margin-right: 30px;
+  margin-top: 5px;
+  color: #e0e0e0;
+}
 
-
-.add-section{
-    flex: 15%;
-    background-color: #E8E8E8;
-    min-height: 70px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    text-align: center;
-
+.add-section {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  justify-content: center; /* vizszintesen igazitja a flexbox elemeit */
+  background-color: #e8e8e8;
+  min-height: 70px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-align: center;
 }
 
 /* Select div */
-  .selectdiv {
-    /*Don't really need this just for demo styling*/
-    min-width: 30px;
-    margin-left: 40px;
-    margin-top: 5px;
-  
-  }
-  
-  /*To remove button from IE11, thank you Matt */
-  select::-ms-expand {
-       display: none;
-  }
-  
-  .selectdiv:after {
-    content: '<>';
-    font: 17px "Consolas", monospace;
-    color: #333;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    right: 11px;
-    /*Adjust for position however you want*/
-    
-    top: 18px;
-    padding: 0 0 2px;
-    /*left line */
-    
-    position: absolute;
-    pointer-events: none;
-  }
-  
-  .selectdiv select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    /* Add some styling */
-    
-    display: inline;
-    max-width: 60px;
-    height: 50px;
-    padding: 0px 24px;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #333;
-    background-image: none;
-    -ms-word-break: normal;
-    word-break: normal;
-  }
-  /* End of select div */
 
-  #description{
-    min-width: 250px;
-    min-height: 30px;
-    margin-left: 40px;
-    margin-top: 10px;
-    padding: 10px;
-  }
-
-  #value{
-    max-width: 70px;
-    min-height: 30px;
-    margin-left: 40px;
-    margin-top: 10px;
-    padding: 10px;
+/*To remove button from IE11, thank you Matt */
+select::-ms-expand {
+  display: none;
 }
 
-#addButton{
-    max-width: 1500px;
-    min-height: 50px;
-    margin-left: 40px;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #25b1ac;
-    border: black;
+#inputs:after {
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+  /*Adjust for position however you want*/
+
+  top: 18px;
+  padding: 0 0 2px;
+  /*left line */
+
+  position: absolute;
+  pointer-events: none;
 }
 
+#inputs select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  border-radius: 5px;
+  border-color: #25b1ac;
+  display: inline;
+  max-width: 60px;
+  height: 50px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-image: none;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+/* End of select div */
 
+#description {
+  padding: 10px;
+  display: inline-block;
+  height: 27px;
+  border: 3px;
+  border-radius: 5px;
+  width: 40%;
+  min-width: 20%;
+}
+
+#value {
+  padding: 10px;
+  display: inline-block;
+  height: 27px;
+  width: 9%;
+  min-width: 7%;
+  border-radius: 5px;
+  border: 3px;
+}
+
+#addButton {
+  padding: 10px;
+  height: 48px;
+  background-color: white;
+  border-radius: 5px;
+  color: #505050;
+  border: 1px solid #25b1ac;
+  display: inline-block;
+}
 
 /********************************* CONTENT *********************************/
 
-.content{
-    flex:50%;
-    background-color: white;
-    min-height: 200px;
-    margin-top: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+.content {
+  display: flex;
+  gap: 30%; /*eltolas az inline elemek kozott*/
+  justify-content: center;
+  background-color: white;
+  min-height: 200px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-#inputs{
-  display: inline;
+#inputs {
+  display: flex;
+  gap: 30px;
 }
 
-#descText{
+#descText {
   display: inline-block;
-  font-size:large;
+  font-size: large;
   color: #484848;
 }
 
-#priceText{
+#priceText {
   display: inline-block;
   float: right;
 }
 /* Cards */
 /* Float four columns side by side */
 
-
 /* Remove extra left and right margins, due to padding */
-
 
 /* Clear floats after the columns */
 #row:after {
@@ -217,40 +230,44 @@
 /* Style the counter cards */
 .cardforincome {
   display: inline-block;
-  width: 20%;
+  width: 90%;
+  border-radius: 5px;
   margin-top: 10px;
-  margin-left: 25%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 5px;
+  padding: 10px;
   text-align: left;
   background-color: #f1f1f1;
 }
 
 .cardforexpenses {
   display: inline-block;
-  width: 20%;
+  width: 90%;
+  border-radius: 5px;
   margin-top: 10px;
-  margin-left: 75%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 5px;
+  padding: 10px;
   text-align: left;
   background-color: #f1f1f1;
 }
 
-
-#incomeh2{
-  display: inline;
-  color:#25b1ac;
-  margin-left: 25%;
+.incomediv,
+.expensesdiv {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  text-align: center;
 }
 
-#expensesh2{
-  color:#ff3c38;
-  margin-left: 35%;
+#incomeh2 {
   display: inline;
+  color: #25b1ac;
+  margin-top: 5%;
+  border-bottom-style: solid;
 }
-@media (max-height: 1000px) {
-    .header, .add-section .content {
-      flex: 100%;
-    }
-  }
+
+#expensesh2 {
+  display: inline;
+  color: #ff3c38;
+  margin-top: 5%;
+  border-bottom-style: solid;
+}
