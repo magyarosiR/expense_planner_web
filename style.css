@@ -31,6 +31,14 @@
   gap: 5px;
   flex-wrap: wrap;
 }
+.calculation {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
 #calculated-budget {
   text-align: center;
   color: #bebebe;
@@ -188,7 +196,7 @@ select::-ms-expand {
   justify-content: center;
   background-color: white;
   min-height: 200px;
-  margin-top: 10px;
+  margin-top: 1%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -281,3 +289,46 @@ select::-ms-expand {
 }
 
 /******************* FOOTER*******************/
+.footer {
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  background-color: #25b1ac;
+  margin-top: 1%;
+  color: #505050;
+  padding: 5%;
+}
+.aboutUs {
+  width: 40%;
+}
+.aboutUsParagraphs {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+
+  text-justify: inter-word;
+  transition: 0.3s;
+}
+
+.contactUs {
+  margin-left: 15%;
+}
+
+#sendMail {
+  color: black;
+  background-color: #25b1ac;
+  border: none;
+  font-size: 25px;
+  transition: 0.3s;
+}
+#sendMail:hover {
+  color: #e8e8e8;
+}
+#ush2 {
+  color: black;
+  max-width: 200px;
+  font-size: 40px;
+}
+#ush2:hover {
+  color: #ff3c38;
+}

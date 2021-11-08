@@ -14,7 +14,11 @@
           <span style="display: inline-block">Avaible Budget in </span>
           <span style="display: inline-block" id="time_span"></span>
         </div>
-        <div id="calculated-budget"></div>
+        <div id="calculation">
+          <span id="symbol">€</span>
+          <span id="calculated-budget"></span>
+        </div>
+
         <br />
         <div class="income">
           <div id="income-text">Income</div>
@@ -38,7 +42,7 @@
           </select>
         </label>
         <input type="text" id="description" placeholder="Add description..." />
-        <input type="text" id="inputValue" placeholder="Value" />
+        <input type="text" id="inputValue" placeholder="Value (€)" />
         <input
           type="button"
           id="addButton"
@@ -57,5 +61,57 @@
     </div>
 
     <!-- Site footer -->
+    <footer class="footer">
+      <div class="aboutUs">
+        <h2 id="ush2">About Us</h2>
+        <div class="aboutUsParagraphs">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh
+            nunc, volutpat eget lorem sit amet, tincidunt hendrerit sapien. Ut a
+            dolor ut felis euismod faucibus eget ut enim. Quisque mollis
+            pharetra metus, at commodo metus finibus quis. Integer elementum, mi
+            semper suscipit laoreet, metus lorem gravida elit, et ultricies
+            sapien es
+          </p>
+          <br />
+          <p>
+            estibulum non lacus sit amet justo vestibulum auctor. Cras porttitor
+            sodales laoreet. Sed varius, est tristique finibus vulputate, dui
+            ante finibus tortor, quis blandit risus lorem in dolor. Praesent
+            auctor, odio in tempor convallis, sem orci convallis enim, a
+            tincidunt sem sapien non velit. Duis vehicula dolor est, eget mattis
+            torto
+          </p>
+          <br />
+          <p>
+            In tempus pellentesque dolor ullamcorper eleifend. Pellentesque
+            consequat ornare urna ut consequat. Vestibulum quis nibh dolor. Cras
+            laoreet, mauris at sollicitudin venenatis, purus lorem vehicula
+            metus, in imperdiet tortor magna vitae odio. Pellentesque tempor
+            efficitur dictum. Proin sit amet iaculis dolor, efficitur efficitur
+            risus. Vivamus lectus metus, posuere aliquam tellus vel, aliquam la
+          </p>
+
+          <br />
+        </div>
+      </div>
+      <div class="contactUs">
+        <h2 id="ush2">Contact Us</h2>
+        <input
+          style="display: inline-block"
+          type="button"
+          id="sendMail"
+          onclick="sendMail()"
+          value="Send mail"
+        />
+        <p style="display: inline-block">to our team!</p>
+        <br />
+        <br />
+        <p>We are available the social networks too!</p>
+        <div class="socialNetworks">
+          <span></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

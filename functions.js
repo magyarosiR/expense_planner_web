@@ -93,7 +93,7 @@ function addContent() {
     incomeSum += parseInt(price);
     document.getElementById("calculated-budget").innerHTML =
       sumOfCalculatedBudget;
-    document.getElementById("income-value").innerHTML = incomeSum;
+    document.getElementById("income-value").innerHTML = "€  " + incomeSum;
     document
       .getElementById("calculated-budget")
       .setAttribute("value", sumOfCalculatedBudget);
@@ -104,7 +104,7 @@ function addContent() {
     expensesSum -= parseInt(price);
     document.getElementById("calculated-budget").innerHTML =
       sumOfCalculatedBudget;
-    document.getElementById("expenses-value").innerHTML = expensesSum;
+    document.getElementById("expenses-value").innerHTML = "€  " + expensesSum;
     document
       .getElementById("calculated-budget")
       .setAttribute("value", sumOfCalculatedBudget);
@@ -115,6 +115,10 @@ function addContent() {
 function loadPage() {
   updateTime();
   calculateBudet();
+}
+
+function sendMail() {
+  window.open("mailto:office@expenseplanner.com");
 }
 
 window.onload = loadPage;
