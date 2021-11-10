@@ -172,7 +172,7 @@ select::-ms-expand {
   padding: 10px;
   display: inline-block;
   height: 27px;
-  width: 9%;
+  width: 13%;
   min-width: 7%;
   border-radius: 5px;
   border: 3px;
@@ -205,23 +205,6 @@ select::-ms-expand {
   gap: 30px;
 }
 
-#descText {
-  display: inline-block;
-  font-size: large;
-  color: #484848;
-}
-
-#priceTextI {
-  display: inline-block;
-  float: right;
-  color: #25b1ac;
-}
-#priceTextE {
-  display: inline-block;
-  float: right;
-  color: #ff3c38;
-}
-
 /* Cards */
 /* Float four columns side by side */
 
@@ -245,25 +228,38 @@ select::-ms-expand {
 
 /* Style the counter cards */
 .cardforincome {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 90%;
   border-radius: 5px;
   margin-top: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 7px;
-  text-align: left;
   background-color: #f1f1f1;
+  text-align: left;
+}
+
+.cardforincome:hover > #xButton {
+  display: inline-block;
+  max-height: 20px;
+}
+.cardforexpenses:hover > #xButton {
+  display: inline-block;
+  max-height: 20px;
 }
 
 .cardforexpenses {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 90%;
   border-radius: 5px;
   margin-top: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  text-align: left;
+  padding: 7px;
   background-color: #f1f1f1;
+  text-align: left;
 }
 
 .incomediv,
@@ -274,6 +270,54 @@ select::-ms-expand {
   text-align: center;
 }
 
+#descText {
+  display: inline-block;
+  font-size: large;
+  color: #484848;
+  flex-grow: 7;
+}
+
+#priceTextI {
+  display: inline-block;
+  color: #25b1ac;
+  flex-grow: 1;
+  text-align: center;
+}
+
+#xButton {
+  display: none;
+  border: none;
+  flex-grow: 0.1;
+  right: 15px;
+  top: 15px;
+  width: 15px;
+  height: 15px;
+  opacity: 0.3;
+}
+#xButton:hover {
+  opacity: 1;
+}
+#xButton:before,
+#xButton:after {
+  position: absolute;
+  content: " ";
+  height: 15px;
+  width: 1px;
+  margin-top: -7px;
+  background-color: #333;
+}
+#xButton:before {
+  transform: rotate(45deg);
+}
+#xButton:after {
+  transform: rotate(-45deg);
+}
+#priceTextE {
+  display: inline-block;
+  color: #ff3c38;
+  flex-grow: 1;
+  text-align: center;
+}
 #incomeh2 {
   display: inline;
   color: #25b1ac;
@@ -296,7 +340,7 @@ select::-ms-expand {
   background-color: #25b1ac;
   margin-top: 1%;
   color: #505050;
-  padding: 5%;
+  padding: 3%;
   padding-bottom: 10px;
 }
 .aboutUs {

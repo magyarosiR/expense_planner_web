@@ -45,6 +45,8 @@ function calculateBudet() {
 }
 
 function addCard(whichDiv, cardName, pIdType) {
+  /* VALIDATION INPUT FIELDS */
+
   let content = {
     id: Date.now(),
     description: document.getElementById("description").value,
@@ -62,21 +64,24 @@ function addCard(whichDiv, cardName, pIdType) {
 
   var h3 = document.createElement("h3"); //create the h3 tag
   var p = document.createElement("p"); //create the paragraph tag
+  var xButton = document.createElement("button"); //create x button
 
   h3.id += "descText"; // give it a class by adding to the list
   p.id += pIdType;
-  console.log(contents.length - 1);
+  xButton.id += "xButton";
+
   h3.innerHTML = contents[contents.length - 1].description;
   p.innerHTML = contents[contents.length - 1].price;
   /*for (let i = 0; i < contents.length; i++) {
-    h3.innerHTML = contents[i].description;
-    p.innerHTML = contents[i].price;
-  }*/
+      h3.innerHTML = contents[i].description;
+      p.innerHTML = contents[i].price;
+    }*/
   div.appendChild(h3);
   div.appendChild(p);
+  div.appendChild(xButton);
+  xButton.setAttribute("onClick", "xonClick()");
+
   document.body.appendChild(div);
-  var h3 = document.createElement("h3");
-  var p = document.createElement("p");
 
   div.className = cardName;
 
@@ -88,30 +93,48 @@ let sumOfCalculatedBudget = 0;
 let incomeSum = 0;
 let expensesSum = 0;
 function addContent() {
-  let selectValue = document.getElementById("select").value;
-  if (selectValue === "+") {
-    let price = document.getElementById("inputValue").value;
-    sumOfCalculatedBudget += parseInt(price);
-    incomeSum += parseInt(price);
-    document.getElementById("calculated-budget").innerHTML =
-      sumOfCalculatedBudget;
-    document.getElementById("income-value").innerHTML = "€  " + incomeSum;
-    document
-      .getElementById("calculated-budget")
-      .setAttribute("value", sumOfCalculatedBudget);
-    addCard("incomediv", "cardforincome", "priceTextI");
+  var descInput = document.forms["inputForm"]["description"].value;
+  var priceInput = document.forms["inputForm"]["inputValue"].value;
+  if (
+    (descInput == null || descInput == "",
+    priceInput == null || priceInput == "")
+  ) {
+    alert("Please fill all input fields.");
+    return false;
   } else {
-    let price = document.getElementById("inputValue").value;
-    sumOfCalculatedBudget -= parseInt(price);
-    expensesSum -= parseInt(price);
-    document.getElementById("calculated-budget").innerHTML =
-      sumOfCalculatedBudget;
-    document.getElementById("expenses-value").innerHTML = "€  " + expensesSum;
-    document
-      .getElementById("calculated-budget")
-      .setAttribute("value", sumOfCalculatedBudget);
-    addCard("expensesdiv", "cardforexpenses", "priceTextE");
+    let selectValue = document.getElementById("select").value;
+    if (selectValue === "+") {
+      let price = document.getElementById("inputValue").value;
+      sumOfCalculatedBudget += parseInt(price);
+      incomeSum += parseInt(price);
+      document.getElementById("calculated-budget").innerHTML =
+        sumOfCalculatedBudget;
+      document.getElementById("income-value").innerHTML = "€  " + incomeSum;
+      document
+        .getElementById("calculated-budget")
+        .setAttribute("value", sumOfCalculatedBudget);
+      document.getElementById("income-value").setAttribute("value", incomeSum);
+      addCard("incomediv", "cardforincome", "priceTextI");
+    } else {
+      let price = document.getElementById("inputValue").value;
+      sumOfCalculatedBudget -= parseInt(price);
+      expensesSum -= parseInt(price);
+      document.getElementById("calculated-budget").innerHTML =
+        sumOfCalculatedBudget;
+      document.getElementById("expenses-value").innerHTML = "€  " + expensesSum;
+      document
+        .getElementById("calculated-budget")
+        .setAttribute("value", sumOfCalculatedBudget);
+      document
+        .getElementById("expenses-value")
+        .setAttribute("value", expensesSum);
+      addCard("expensesdiv", "cardforexpenses", "priceTextE");
+    }
   }
+}
+
+function xonClick() {
+  alert("clicked");
 }
 
 function loadPage() {
