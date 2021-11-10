@@ -65,11 +65,13 @@ function addCard(whichDiv, cardName, pIdType) {
 
   h3.id += "descText"; // give it a class by adding to the list
   p.id += pIdType;
-
-  for (let i = 0; i < contents.length; i++) {
+  console.log(contents.length - 1);
+  h3.innerHTML = contents[contents.length - 1].description;
+  p.innerHTML = contents[contents.length - 1].price;
+  /*for (let i = 0; i < contents.length; i++) {
     h3.innerHTML = contents[i].description;
     p.innerHTML = contents[i].price;
-  }
+  }*/
   div.appendChild(h3);
   div.appendChild(p);
   document.body.appendChild(div);
