@@ -109,15 +109,12 @@ function addContent() {
         let price = document.getElementById("inputValue").value;
         sumOfCalculatedBudget += parseInt(price);
         incomeSum += parseInt(price);
-        document.getElementById("calculated-budget").innerHTML =
-          sumOfCalculatedBudget;
-        document.getElementById("income-value").innerHTML = "€  " + incomeSum;
-        document
-          .getElementById("calculated-budget")
-          .setAttribute("value", sumOfCalculatedBudget);
-        document
-          .getElementById("income-value")
-          .setAttribute("value", incomeSum);
+        writeToCard(
+          "calculated-budget",
+          sumOfCalculatedBudget,
+          "income-value",
+          incomeSum
+        );
         addCard("incomediv", "cardforincome", "priceTextI");
       } else {
         alert("Please give a positive number or choose another option!");
@@ -127,16 +124,12 @@ function addContent() {
         let price = document.getElementById("inputValue").value;
         sumOfCalculatedBudget -= parseInt(price);
         expensesSum -= parseInt(price);
-        document.getElementById("calculated-budget").innerHTML =
-          sumOfCalculatedBudget;
-        document.getElementById("expenses-value").innerHTML =
-          "€  " + expensesSum;
-        document
-          .getElementById("calculated-budget")
-          .setAttribute("value", sumOfCalculatedBudget);
-        document
-          .getElementById("expenses-value")
-          .setAttribute("value", expensesSum);
+        writeToCard(
+          "calculated-budget",
+          sumOfCalculatedBudget,
+          "expenses-value",
+          expensesSum
+        );
         addCard("expensesdiv", "cardforexpenses", "priceTextE");
       } else {
         alert(
@@ -145,6 +138,20 @@ function addContent() {
       }
     }
   }
+}
+
+function writeToCard(
+  calculatedBudget,
+  sumOfCalculatedBudget,
+  eOrIValue,
+  oOrISum
+) {
+  document.getElementById(calculatedBudget).innerHTML = sumOfCalculatedBudget;
+  document.getElementById(eOrIValue).innerHTML = "€  " + oOrISum;
+  document
+    .getElementById(calculatedBudget)
+    .setAttribute("value", sumOfCalculatedBudget);
+  document.getElementById(eOrIValue).setAttribute("value", oOrISum);
 }
 function xonClick() {
   for (let i = 0; i < contents.length; i++)
