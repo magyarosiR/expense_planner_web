@@ -71,14 +71,18 @@ function addCard(whichDiv, cardName, pIdType) {
 
   h3.innerHTML = contents[contents.length - 1].description;
   p.innerHTML = contents[contents.length - 1].price;
-  /*for (let i = 0; i < contents.length; i++) {
-      h3.innerHTML = contents[i].description;
-      p.innerHTML = contents[i].price;
-    }*/
+
   div.appendChild(h3);
   div.appendChild(p);
   div.appendChild(xButton);
-  xButton.setAttribute("onClick", "xonClick()");
+  selectedColumn = p.getAttribute("class");
+  if (selectedColumn === "priceTextI") {
+    xButton.setAttribute("onClick", 'xonClick(this.id, "cardforincome")');
+  } else if (selectedColumn === "priceTextE") {
+    xButton.setAttribute("onClick", 'xonClick(this.id, "cardforexpenses")');
+  } else {
+    console.log("pass");
+  }
 
   document.body.appendChild(div);
 
@@ -154,14 +158,16 @@ function writeToCard(
   document.getElementById(eOrIValue).setAttribute("value", oOrISum);
 }
 
-function xonClick() {
-  let cardforincome = document.getElementsByClassName("cardforincome");
-  console.log(cardforincome);
-  /*for (var i = 0; i < cardforincome.length; i++) {
+function xonClick(clicked_id, cardType) {
+  let cardforincome = document.getElementsByClassName(cardType);
+
+  for (var i = 0; i < cardforincome.length; i++) {
     let val = parseInt(cardforincome[i].getAttribute("value"));
-    console.log("incomeval" + val);
-    console.log("contents" + contents[i].id);
-  }*/
+    if (clicked_id == val) {
+      let removableDiv = document.getElementsByClassName(cardType);
+      removableDiv[i].remove();
+    }
+  }
 }
 
 function loadPage() {

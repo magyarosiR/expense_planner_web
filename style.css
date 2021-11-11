@@ -240,11 +240,11 @@ select::-ms-expand {
   text-align: left;
 }
 
-.cardforincome:hover > #xButton {
+.cardforincome:hover > .xButton {
   display: inline-block;
   max-height: 20px;
 }
-.cardforexpenses:hover > #xButton {
+.cardforexpenses:hover > .xButton {
   display: inline-block;
   max-height: 20px;
 }
