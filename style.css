@@ -270,21 +270,21 @@ select::-ms-expand {
   text-align: center;
 }
 
-#descText {
+.descText {
   display: inline-block;
   font-size: large;
   color: #484848;
   flex-grow: 7;
 }
 
-#priceTextI {
+.priceTextI {
   display: inline-block;
   color: #25b1ac;
   flex-grow: 1;
   text-align: center;
 }
 
-#xButton {
+.xButton {
   display: none;
   border: none;
   flex-grow: 0.1;
@@ -294,11 +294,11 @@ select::-ms-expand {
   height: 15px;
   opacity: 0.3;
 }
-#xButton:hover {
+.xButton:hover {
   opacity: 1;
 }
-#xButton:before,
-#xButton:after {
+.xButton:before,
+.xButton:after {
   position: absolute;
   content: " ";
   height: 15px;
@@ -306,13 +306,13 @@ select::-ms-expand {
   margin-top: -7px;
   background-color: #333;
 }
-#xButton:before {
+.xButton:before {
   transform: rotate(45deg);
 }
-#xButton:after {
+.xButton:after {
   transform: rotate(-45deg);
 }
-#priceTextE {
+.priceTextE {
   display: inline-block;
   color: #ff3c38;
   flex-grow: 1;

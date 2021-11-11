@@ -42,7 +42,6 @@ function calculateBudet() {
     document.getElementById("calculated-budget").innerHTML = "+ " + calculation;
   }
 }
-let valueNumber = 0;
 function addCard(whichDiv, cardName, pIdType) {
   /* VALIDATION INPUT FIELDS */
 
@@ -65,9 +64,10 @@ function addCard(whichDiv, cardName, pIdType) {
   var p = document.createElement("p"); //create the paragraph tag
   var xButton = document.createElement("button"); //create x button
 
-  h3.id += "descText"; // give it a class by adding to the list
-  p.id += pIdType;
-  xButton.id += "xButton";
+  h3.className += "descText"; // give it a class by adding to the list
+  p.className += pIdType;
+  xButton.className += "xButton";
+  xButton.id += content.id;
 
   h3.innerHTML = contents[contents.length - 1].description;
   p.innerHTML = contents[contents.length - 1].price;
@@ -83,8 +83,8 @@ function addCard(whichDiv, cardName, pIdType) {
   document.body.appendChild(div);
 
   div.className = cardName;
+  valueNumber = content.id;
   div.setAttribute("value", valueNumber);
-  valueNumber += 1;
 
   document.getElementsByClassName(whichDiv)[0].appendChild(div);
 }
@@ -153,11 +153,15 @@ function writeToCard(
     .setAttribute("value", sumOfCalculatedBudget);
   document.getElementById(eOrIValue).setAttribute("value", oOrISum);
 }
-function xonClick() {
-  for (let i = 0; i < contents.length; i++)
-    console.log("console:" + contents[i].description);
 
-  //alert("clicked");
+function xonClick() {
+  let cardforincome = document.getElementsByClassName("cardforincome");
+  console.log(cardforincome);
+  /*for (var i = 0; i < cardforincome.length; i++) {
+    let val = parseInt(cardforincome[i].getAttribute("value"));
+    console.log("incomeval" + val);
+    console.log("contents" + contents[i].id);
+  }*/
 }
 
 function loadPage() {
