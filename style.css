@@ -232,6 +232,7 @@ select::-ms-expand {
   flex-direction: row;
   align-items: center;
   width: 90%;
+
   border-radius: 5px;
   margin-top: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -268,6 +269,7 @@ select::-ms-expand {
   flex-direction: column;
   width: 20%;
   text-align: center;
+  margin-bottom: 2%;
 }
 
 .descText {

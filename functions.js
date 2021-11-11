@@ -39,7 +39,7 @@ function calculateBudet() {
   } else if (calculation == 0) {
     document.getElementById("calculated-budget").innerHTML = 0;
   } else {
-    document.getElementById("calculated-budget").innerHTML = "+ " + calculation;
+    document.getElementById("calculated-budget").innerHTML = calculation;
   }
 }
 function addCard(whichDiv, cardName, pIdType) {
@@ -89,6 +89,7 @@ function addCard(whichDiv, cardName, pIdType) {
   div.className = cardName;
   valueNumber = content.id;
   div.setAttribute("value", valueNumber);
+  p.setAttribute("value", contents[contents.length - 1].price);
 
   document.getElementsByClassName(whichDiv)[0].appendChild(div);
 }
@@ -144,6 +145,55 @@ function addContent() {
   }
 }
 
+function xonClick(clicked_id, cardType) {
+  let cardfor = document.getElementsByClassName(cardType);
+  if (cardType == "cardforincome") {
+    for (let i = 0; i < cardfor.length; i++) {
+      let val = parseInt(cardfor[i].getAttribute("value"));
+      if (clicked_id == val) {
+        let removableDiv = document.getElementsByClassName(cardType);
+        let clasPrice = parseInt(
+          document.getElementsByClassName("priceTextI")[i].getAttribute("value")
+        );
+
+        sumOfCalculatedBudget -= parseInt(clasPrice);
+        incomeSum -= parseInt(clasPrice);
+        writeToCard(
+          "calculated-budget",
+          sumOfCalculatedBudget,
+          "income-value",
+          incomeSum
+        );
+        calculateBudet();
+        removableDiv[i].remove();
+      }
+    }
+  } else if (cardType == "cardforexpenses") {
+    for (let i = 0; i < cardfor.length; i++) {
+      let val = parseInt(cardfor[i].getAttribute("value"));
+      if (clicked_id == val) {
+        let removableDiv = document.getElementsByClassName(cardType);
+        let clasPrice = parseInt(
+          document.getElementsByClassName("priceTextE")[i].getAttribute("value")
+        );
+
+        sumOfCalculatedBudget += parseInt(clasPrice);
+        expensesSum += parseInt(clasPrice);
+        writeToCard(
+          "calculated-budget",
+          sumOfCalculatedBudget,
+          "expenses-value",
+          expensesSum
+        );
+        calculateBudet();
+        removableDiv[i].remove();
+      }
+    }
+  } else {
+    console.log("pass");
+  }
+}
+
 function writeToCard(
   calculatedBudget,
   sumOfCalculatedBudget,
@@ -156,18 +206,6 @@ function writeToCard(
     .getElementById(calculatedBudget)
     .setAttribute("value", sumOfCalculatedBudget);
   document.getElementById(eOrIValue).setAttribute("value", oOrISum);
-}
-
-function xonClick(clicked_id, cardType) {
-  let cardforincome = document.getElementsByClassName(cardType);
-
-  for (var i = 0; i < cardforincome.length; i++) {
-    let val = parseInt(cardforincome[i].getAttribute("value"));
-    if (clicked_id == val) {
-      let removableDiv = document.getElementsByClassName(cardType);
-      removableDiv[i].remove();
-    }
-  }
 }
 
 function loadPage() {
