@@ -34,7 +34,6 @@ function calculateBudet() {
     document.getElementById("expenses-value").getAttribute("value")
   );
   let calculation = income - expenses;
-  console.log(calculation);
   if (calculation < 0) {
     document.getElementById("calculated-budget").innerHTML = "- " + calculation;
   } else if (calculation == 0) {
@@ -43,7 +42,7 @@ function calculateBudet() {
     document.getElementById("calculated-budget").innerHTML = "+ " + calculation;
   }
 }
-
+let valueNumber = 0;
 function addCard(whichDiv, cardName, pIdType) {
   /* VALIDATION INPUT FIELDS */
 
@@ -84,6 +83,8 @@ function addCard(whichDiv, cardName, pIdType) {
   document.body.appendChild(div);
 
   div.className = cardName;
+  div.setAttribute("value", valueNumber);
+  valueNumber += 1;
 
   document.getElementsByClassName(whichDiv)[0].appendChild(div);
 }
@@ -104,37 +105,52 @@ function addContent() {
   } else {
     let selectValue = document.getElementById("select").value;
     if (selectValue === "+") {
-      let price = document.getElementById("inputValue").value;
-      sumOfCalculatedBudget += parseInt(price);
-      incomeSum += parseInt(price);
-      document.getElementById("calculated-budget").innerHTML =
-        sumOfCalculatedBudget;
-      document.getElementById("income-value").innerHTML = "€  " + incomeSum;
-      document
-        .getElementById("calculated-budget")
-        .setAttribute("value", sumOfCalculatedBudget);
-      document.getElementById("income-value").setAttribute("value", incomeSum);
-      addCard("incomediv", "cardforincome", "priceTextI");
+      if (priceInput > 0) {
+        let price = document.getElementById("inputValue").value;
+        sumOfCalculatedBudget += parseInt(price);
+        incomeSum += parseInt(price);
+        document.getElementById("calculated-budget").innerHTML =
+          sumOfCalculatedBudget;
+        document.getElementById("income-value").innerHTML = "€  " + incomeSum;
+        document
+          .getElementById("calculated-budget")
+          .setAttribute("value", sumOfCalculatedBudget);
+        document
+          .getElementById("income-value")
+          .setAttribute("value", incomeSum);
+        addCard("incomediv", "cardforincome", "priceTextI");
+      } else {
+        alert("Please give a positive number or choose another option!");
+      }
     } else {
-      let price = document.getElementById("inputValue").value;
-      sumOfCalculatedBudget -= parseInt(price);
-      expensesSum -= parseInt(price);
-      document.getElementById("calculated-budget").innerHTML =
-        sumOfCalculatedBudget;
-      document.getElementById("expenses-value").innerHTML = "€  " + expensesSum;
-      document
-        .getElementById("calculated-budget")
-        .setAttribute("value", sumOfCalculatedBudget);
-      document
-        .getElementById("expenses-value")
-        .setAttribute("value", expensesSum);
-      addCard("expensesdiv", "cardforexpenses", "priceTextE");
+      if (priceInput > 0) {
+        let price = document.getElementById("inputValue").value;
+        sumOfCalculatedBudget -= parseInt(price);
+        expensesSum -= parseInt(price);
+        document.getElementById("calculated-budget").innerHTML =
+          sumOfCalculatedBudget;
+        document.getElementById("expenses-value").innerHTML =
+          "€  " + expensesSum;
+        document
+          .getElementById("calculated-budget")
+          .setAttribute("value", sumOfCalculatedBudget);
+        document
+          .getElementById("expenses-value")
+          .setAttribute("value", expensesSum);
+        addCard("expensesdiv", "cardforexpenses", "priceTextE");
+      } else {
+        alert(
+          'If you want to add Expense card please just choose the "-" value on front of add section and add a positive value to the input filed.\n\n The system will resolve it.'
+        );
+      }
     }
   }
 }
-
 function xonClick() {
-  alert("clicked");
+  for (let i = 0; i < contents.length; i++)
+    console.log("console:" + contents[i].description);
+
+  //alert("clicked");
 }
 
 function loadPage() {

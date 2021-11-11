@@ -302,7 +302,7 @@ select::-ms-expand {
   position: absolute;
   content: " ";
   height: 15px;
-  width: 1px;
+  width: 1.2px;
   margin-top: -7px;
   background-color: #333;
 }
