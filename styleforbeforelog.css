@@ -75,3 +75,43 @@ div.image {
 #signup:hover {
   background-color: #ff3c38;
 }
+
+/********************SignUpPage********************/
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: left;
+}
+.signup-form {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+/********************LogInPage********************/
+.login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: left;
+}
+.login-form {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+a.signup-btn:link {
+  color: #25b1ac;
+  text-decoration: none;
+}
+a.signup-btn:visited {
+  color: #ff3c38;
+}
+a.signup-btn:hover {
+  color: #222;
+}

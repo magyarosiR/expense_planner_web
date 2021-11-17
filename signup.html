@@ -3,15 +3,21 @@
   <head>
     <link rel="stylesheet" href="styleforbeforelog.css" />
 
-    <title>Log in</title>
+    <title>Sign up</title>
   </head>
 
   <body>
     <div class="flex-container">
-      <div class="welcome">Log in please to your account</div>
-      <div class="login-container">
+      <div class="welcome">
+        <p>This is the register side</p>
+      </div>
+
+      <div class="signup-container">
         <p>Enter your details:</p>
-        <form class="login-form">
+
+        <form class="signup-form">
+          <input type="text" placeholder="Firs name" id="fname-su" required />
+          <input type="text" placeholder="Last name" id="lname-su" required />
           <input type="email" placeholder="E-mail" id="email-su" required />
           <input
             type="password"
@@ -19,16 +25,13 @@
             id="passw-su"
             required
           />
+          <input
+            type="password"
+            placeholder="Repeat password"
+            id="repeat-passw-su"
+            required
+          />
         </form>
-        <div class="pls-signup">
-          <p style="display: inline-block">
-            If you don't have an account please
-          </p>
-
-          <p style="display: inline-block">
-            <a class="signup-btn" href="signup.html"> Sign Up</a>
-          </p>
-        </div>
       </div>
     </div>
   </body>
