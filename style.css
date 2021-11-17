@@ -186,6 +186,16 @@ select::-ms-expand {
   color: #505050;
   border: 1px solid #25b1ac;
   display: inline-block;
+  transition: 0.3s;
+}
+
+#addButton:hover {
+  background-color: #25b1ac;
+  border-color: #333;
+}
+#addButton:active {
+  background-color: #ff3c38;
+  border-color: #333;
 }
 
 /********************************* CONTENT *********************************/
