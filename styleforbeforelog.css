@@ -104,7 +104,17 @@ div.image {
   flex-direction: row;
   gap: 12px;
 }
-
+#email-lo,
+#email-su,
+#passw-lo,
+#passw-su,
+#repeat-passw-su,
+#fname-su,
+#lname-su {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+}
 a.signup-btn:link {
   color: #25b1ac;
   text-decoration: none;
@@ -114,4 +124,26 @@ a.signup-btn:visited {
 }
 a.signup-btn:hover {
   color: #222;
+}
+
+#submit-lo {
+  width: 90px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #25b1ac;
+  transition: 0.3s;
+}
+#submit-lo:hover {
+  background-color: #25b1ac;
+}
+
+#submit-su {
+  width: 90px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #25b1ac;
+  transition: 0.3s;
+}
+#submit-su:hover {
+  background-color: #25b1ac;
 }
