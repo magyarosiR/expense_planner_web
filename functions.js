@@ -1,5 +1,21 @@
-/* test commit to log-branch */
+/* initialize firebase */
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCdMnObJXskT4foqH79ILUhPZIg1pcfWZE",
+  authDomain: "expense-planner-2k21.firebaseapp.com",
+  projectId: "expense-planner-2k21",
+  storageBucket: "expense-planner-2k21.appspot.com",
+  messagingSenderId: "771268811625",
+  appId: "1:771268811625:web:56418547857914cebfbbf8",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 function updateTime() {
   const monthNames = [
     "January",
