@@ -1,0 +1,28 @@
+{
+  "name": "expense_planner_website",
+  "version": "1.0.0",
+  "description": "I designed this project in HTML, CSS & JavaScript for web. In this website the user can add cards for incomes and expenses and the site will calculate a monthly summary, income and expense budget. I designed a flexible\r responsive layout structure with Flexible Box Layout Module and I've gained insight how the Bootstrap library works. I've used Bootstrap classes in my footer icons. I paid special attention for UX.",
+  "main": "functions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magyarosiR/expense_planner_web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magyarosiR/expense_planner_web/issues"
+  },
+  "homepage": "https://github.com/magyarosiR/expense_planner_web#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "req-flash": "^0.0.3"
+  }
+}
