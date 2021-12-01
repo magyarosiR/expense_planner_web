@@ -1,6 +1,3 @@
-/* test commit to dev-branch */
-/* test commit to add_db-branch */
-
 function updateTime() {
   const monthNames = [
     "January",
