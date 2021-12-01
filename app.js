@@ -18,7 +18,10 @@ const db = mysql.createConnection({
 
 const publicDirectory = path.join(__dirname, "./public");
 app.use(express.static(publicDirectory));
-app.set("view engine", "hbs");
+app.set("view engine", "html");
+app.engine("html", require("hbs").__express);
+app.use(express.static("views/resources/images"));
+
 db.connect((error) => {
   if (error) {
     console.log(error);
@@ -27,7 +30,7 @@ db.connect((error) => {
   }
 });
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/beforelog.html");
+  res.render("beforelog");
 
   //res.send("<h1>Home Page</h1>");
 });

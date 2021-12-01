@@ -34,7 +34,7 @@
   flex-wrap: wrap;
 }
 div.image {
-  content: url("/resources/images/line.jpg");
+  content: url("line.jpg");
   height: 150px;
   width: 100%;
 }
