@@ -4,7 +4,8 @@
   "description": "I designed this project in HTML, CSS & JavaScript for web. In this website the user can add cards for incomes and expenses and the site will calculate a monthly summary, income and expense budget. I designed a flexible\r responsive layout structure with Flexible Box Layout Module and I've gained insight how the Bootstrap library works. I've used Bootstrap classes in my footer icons. I paid special attention for UX.",
   "main": "functions.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,13 @@
   "homepage": "https://github.com/magyarosiR/expense_planner_web#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "hbs": "^4.2.0",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
     "req-flash": "^0.0.3"
   }
 }

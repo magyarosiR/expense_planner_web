@@ -1,3 +1,5 @@
+/* OLD CODEBASE */
+
 function updateTime() {
   const monthNames = [
     "January",
@@ -218,3 +220,7 @@ function sendMail() {
 }
 
 window.onload = loadPage;
+
+function register() {
+  alert("asd");
+}
