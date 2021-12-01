@@ -3,7 +3,7 @@
 //nodemon refresh automatically my server when i change something in the codebase
 
 const express = require("express");
-
+const path = require("path");
 const mysql = require("mysql");
 const app = express();
 const dotenv = require("dotenv");
@@ -16,6 +16,9 @@ const db = mysql.createConnection({
   database: process.env.DATABASE,
 });
 
+const publicDirectory = path.join(__dirname, "./public");
+
+//app.set("view engine", "html");
 db.connect((error) => {
   if (error) {
     console.log(error);
@@ -24,7 +27,9 @@ db.connect((error) => {
   }
 });
 app.get("/", (req, res) => {
-  res.send("<h1>Home Page</h1>");
+  res.sendFile(__dirname + "/beforelog.html");
+
+  //res.send("<h1>Home Page</h1>");
 });
 
 app.listen(5501, () => {
