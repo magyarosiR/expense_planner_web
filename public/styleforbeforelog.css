@@ -116,7 +116,7 @@ div.image {
   border: 1px solid #e0e0e0;
 }
 a.signup-btn:link {
-  color: #25b1ac;
+  color: #ff3c38;
   text-decoration: none;
 }
 a.signup-btn:visited {
@@ -124,6 +124,17 @@ a.signup-btn:visited {
 }
 a.signup-btn:hover {
   color: #222;
+}
+.flex-container > .alert-message {
+  color: #ff3c38;
+  background-color: #222;
+  padding: 7px;
+}
+
+.flex-container > .green-message {
+  color: #25b1ac;
+  background-color: #222;
+  padding: 7px;
 }
 
 #submit-lo {

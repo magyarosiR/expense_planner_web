@@ -2,7 +2,6 @@ const e = require("express");
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const alert = require("alert");
 
 const db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
@@ -28,19 +27,45 @@ exports.signup = (req, res) => {
       }
       if (results.length > 0) {
         return res.render("signup", {
-          message: "Email has been used",
+          message: "That email is already in use",
         });
       } else {
         if (pw != rpw) {
-          return res.render("signup", () => {
-            alert("asd");
-            //message: "The password not matched",
+          return res.render("signup", {
+            message: "Passwords don't matched",
           });
         }
       }
 
       let hashedPw = await bcrypt.hash(pw, 8);
       console.log(hashedPw);
+      /*db.query(
+        "INSERT INTO users (first_name, last_name, email, password) VALUES ?",
+
+        (error, results) => {
+          if (error) {
+            console.log(error);
+          } else {
+            return res.render("signup", {
+              messagegreen: "User registered",
+            });
+          }
+        }
+      );*/
+      var insert =
+        "INSERT INTO users (first_name, last_name, email, password) VALUES ?";
+      var values = [[fname, lname, email, hashedPw]];
+      db.query(insert, [values], (err, result) => {
+        if (err) {
+          console.log(error);
+        } else {
+          {
+            return res.render("signup", {
+              messagegreen: "User registered",
+            });
+          }
+        }
+      });
     }
   );
   /*var insert =

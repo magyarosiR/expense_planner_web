@@ -7,7 +7,6 @@ const path = require("path");
 const mysql = require("mysql");
 const app = express();
 const dotenv = require("dotenv");
-const { urlencoded } = require("body-parser");
 
 dotenv.config({ path: "./.env" });
 const db = mysql.createConnection({
@@ -25,8 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 // Parse JSON bodies as sent API clients
 app.use(express.json());
 
-app.set("view engine", "html");
-app.engine("html", require("hbs").__express);
+app.set("view engine", "hbs");
+//app.engine("html", require("hbs").__express);
 app.use(express.static("views/resources/images"));
 
 db.connect((error) => {

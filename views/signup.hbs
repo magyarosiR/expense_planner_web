@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styleforbeforelog.css" />
+
+    <script src="functions.js" type="text/javascript"></script>
+    <title>Sign up</title>
+  </head>
+
+  <body>
+    <div class="flex-container">
+      <div class="welcome">
+        <p>This is the register side</p>
+      </div>
+
+      <div class="signup-container">
+        <p>Enter your details:</p>
+
+        <form class="signup-form" action="/auth/signup" method="POST">
+          <input
+            type="text"
+            placeholder="Firs name"
+            id="fname-su"
+            name="fnamesu"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            id="lname-su"
+            name="lnamesu"
+            required
+          />
+          <input
+            type="email"
+            placeholder="E-mail"
+            id="email-su"
+            name="emailsu"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="passw-su"
+            name="passwsu"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Repeat password"
+            id="repeat-passw-su"
+            name="repeatpasswsu"
+            required
+          />
+          <button type="submit" id="submit-su">Sign Up</button>
+        </form>
+        <div class="pls-signup">
+          <p style="display: inline-block">If you have an account please</p>
+
+          <p style="display: inline-block">
+            <a class="signup-btn" href="login"> Log In</a>
+          </p>
+        </div>
+      </div>
+      {{#if message}}
+        <div class="alert-message">
+          {{message}}
+        </div>
+      {{/if}}
+      {{#if messagegreen}}
+        <div class="green-message">
+          {{messagegreen}}
+        </div>
+      {{/if}}
+    </div>
+
+  </body>
+  <div class="last-element">
+    Thank you for your
+    <p style="color: #ff3c38; margin-left: 3px">trust</p>
+    .
+  </div>
+</html>
