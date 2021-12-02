@@ -31,8 +31,14 @@ db.connect((error) => {
 });
 app.get("/", (req, res) => {
   res.render("beforelog");
+});
 
-  //res.send("<h1>Home Page</h1>");
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 app.listen(5501, () => {
