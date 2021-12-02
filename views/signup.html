@@ -16,25 +16,43 @@
       <div class="signup-container">
         <p>Enter your details:</p>
 
-        <form class="signup-form">
-          <input type="text" placeholder="Firs name" id="fname-su" required />
-          <input type="text" placeholder="Last name" id="lname-su" required />
-          <input type="email" placeholder="E-mail" id="email-su" required />
+        <form class="signup-form" action="/auth/signup" method="POST">
+          <input
+            type="text"
+            placeholder="Firs name"
+            id="fname-su"
+            name="fname-su"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            id="lname-su"
+            name="lname-su"
+            required
+          />
+          <input
+            type="email"
+            placeholder="E-mail"
+            id="email-su"
+            name="email-su"
+            required
+          />
           <input
             type="password"
             placeholder="Password"
             id="passw-su"
+            name="passw-su"
             required
           />
           <input
             type="password"
             placeholder="Repeat password"
             id="repeat-passw-su"
+            name="repeat-passw-su"
             required
           />
-          <button type="submit" id="submit-su" onclick="register()">
-            Sign Up
-          </button>
+          <button type="submit" id="submit-su">Sign Up</button>
         </form>
         <div class="pls-signup">
           <p style="display: inline-block">If you have an account please</p>

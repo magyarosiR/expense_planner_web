@@ -220,7 +220,3 @@ function sendMail() {
 }
 
 window.onload = loadPage;
-
-function register() {
-  alert("asd");
-}

@@ -7,6 +7,7 @@ const path = require("path");
 const mysql = require("mysql");
 const app = express();
 const dotenv = require("dotenv");
+const { urlencoded } = require("body-parser");
 
 dotenv.config({ path: "./.env" });
 const db = mysql.createConnection({
@@ -18,6 +19,12 @@ const db = mysql.createConnection({
 
 const publicDirectory = path.join(__dirname, "./public");
 app.use(express.static(publicDirectory));
+// Parse URL-encoded bodies as sent by HTML forms
+app.use(express.urlencoded({ extended: false }));
+
+// Parse JSON bodies as sent API clients
+app.use(express.json());
+
 app.set("view engine", "html");
 app.engine("html", require("hbs").__express);
 app.use(express.static("views/resources/images"));
@@ -32,6 +39,7 @@ db.connect((error) => {
 
 /* Define routes/pages */
 app.use("/", require("./routes/pages"));
+app.use("/auth", require("./routes/auth"));
 
 app.listen(5501, () => {
   console.log("server is running on port 5501");
