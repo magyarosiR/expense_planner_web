@@ -1,4 +1,4 @@
-/* backend side */
+/* server side */
 
 //nodemon refresh automatically my server when i change something in the codebase
 
@@ -29,17 +29,9 @@ db.connect((error) => {
     console.log("MYSQL connected");
   }
 });
-app.get("/", (req, res) => {
-  res.render("beforelog");
-});
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.get("/signup", (req, res) => {
-  res.render("signup");
-});
+/* Define routes/pages */
+app.use("/", require("./routes/pages"));
 
 app.listen(5501, () => {
   console.log("server is running on port 5501");
