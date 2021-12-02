@@ -39,19 +39,7 @@ exports.signup = (req, res) => {
 
       let hashedPw = await bcrypt.hash(pw, 8);
       console.log(hashedPw);
-      /*db.query(
-        "INSERT INTO users (first_name, last_name, email, password) VALUES ?",
 
-        (error, results) => {
-          if (error) {
-            console.log(error);
-          } else {
-            return res.render("signup", {
-              messagegreen: "User registered",
-            });
-          }
-        }
-      );*/
       var insert =
         "INSERT INTO users (first_name, last_name, email, password) VALUES ?";
       var values = [[fname, lname, email, hashedPw]];
@@ -68,13 +56,4 @@ exports.signup = (req, res) => {
       });
     }
   );
-  /*var insert =
-    "INSERT INTO users (id, first_name, last_name, email, password, reppassword) VALUES ?";
-  var values = [[i, fname, lname, email, pw, rpw]];
-  db.query(insert, [values], function (err, result) {
-    if (err) throw err;
-    console.log("Number of records inserted: " + result.affectedRows);
-  });
-*/
-  //res.send("Form submitted");
 };
